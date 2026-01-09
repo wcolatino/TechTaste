@@ -12,4 +12,20 @@ spring:
       ddl-auto: update
     show-sql: true
 
+#eureka.client.register-with-eureka - true - mostra que é pra registrar o eureka
+#eureka.client.fetch-registry - Controla se o Eureka deve buscar (fazer cache) dos registros disponíveis. Nesse caso true
+#defaultZone - Onde o client se registrará
+#instance-id - Identificador para a instância - Noe + numero de 1 a 50
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+     defaultZone: http://localhost:8081/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.int[1,50]}
+
+#porta 0 - o serviço poderá ser executado de qualquer porta, sem numero fixo
+server:
+  port: 0
 
