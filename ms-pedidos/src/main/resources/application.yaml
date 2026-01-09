@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ms-pedidos
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ms-pedidos-db
+    username: postgres
+    password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
