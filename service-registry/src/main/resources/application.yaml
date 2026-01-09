@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: service-registry
+
+server:
+  port: 8081
+
+#eureka.client.register-with-eureka - Define se a aplicação deve ou não se registrar no Eureka - esse caso não pois ela é o Eureka
+#eureka.client.fetch-registry - Controla se o Eureka deve buscar (fazer cache) dos registros disponíveis. COmo esse é o eureka, ela não busca, então false
+#defaultZone - define o end-point de acesso do wureca server que o client usará para buscar informações
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8081/eureka
